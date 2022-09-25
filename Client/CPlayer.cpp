@@ -174,7 +174,7 @@ void CPlayer::render(HDC _dc)
 	// 플레이어를 그리는 부분
 	
 
-	if (CurDir == PLAYER_DIR::PD_UP)
+	if (CurDir == PLAYER_DIR::PD_UP || CurDir == PLAYER_DIR::PD_END)
 	{
 		ImagePrint(m_pTexture, _dc, vPos);
 	}

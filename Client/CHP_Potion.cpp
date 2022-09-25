@@ -9,6 +9,8 @@
 
 #include "CResMgr.h"
 #include "CTexture.h"
+#include "CPathMgr.h"
+
 #include "CCollider.h"
 
 CHP_Potion::CHP_Potion()
