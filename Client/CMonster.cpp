@@ -74,6 +74,16 @@ void CMonster::tick()
 	vPos.x += delta_x;
 	vPos.y += delta_x;
 
+	// 위치 밖으로 벗어나지 않도록 하는 장치.
+	if (vPos.x < 0)
+		vPos.x = 0;
+	if (vPos.x > 3000)
+		vPos.x = 3000;
+	if (vPos.y < 0)
+		vPos.y = 0;
+	if (vPos.y > 3000)
+		vPos.y = 3000;
+
 
 	SetPos(vPos);
 
@@ -115,6 +125,22 @@ void CMonster::render(HDC _dc)
 		, 0, 0
 		, (int)m_pTexture->Width(), (int)m_pTexture->Height()
 		, RGB(255, 0, 255));
+
+	// 몬스터 HP 표시 구간.
+	for (int i = 1; i <= m_HP; ++i)
+	{
+		HBRUSH hHPBrush = (HBRUSH)CreateSolidBrush(RGB(255, 0, 0));
+		HBRUSH hOrigin_HPBrush = (HBRUSH)SelectObject(_dc, hHPBrush);
+
+		Rectangle(_dc, (int)(vPos.x - vSize.x / 3.f + 8.f * (float)i)
+			, (int)(vPos.y - vSize.y / 2.f)
+			, (int)((vPos.x - vSize.x / 3.f + 8.f * (float)i + 5.f))
+			, (int)(vPos.y - vSize.y / 2.f + 5.f));
+
+		SelectObject(_dc, hOrigin_HPBrush);
+		DeleteObject(hHPBrush);
+	}
+
 
 	CObj::render(_dc);
 }

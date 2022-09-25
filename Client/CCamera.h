@@ -6,6 +6,7 @@ class CCamera
 private:
 	Vec2		m_vLook;
 	Vec2		m_vDiff;
+	Vec2		m_aroundPoint;
 
 public:
 	void SetLook(Vec2 _vLook) { m_vLook = _vLook; }

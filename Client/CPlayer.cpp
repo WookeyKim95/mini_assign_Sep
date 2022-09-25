@@ -155,6 +155,16 @@ void CPlayer::tick()
 		pCurLevel->AddObject(pHP_Potion, LAYER::ITEM);
 	}*/
 	
+	// 위치 밖으로 벗어나지 않도록 하는 장치.
+	if (vPos.x < 0)
+		vPos.x = 0;
+	if (vPos.x > 3000)
+		vPos.x = 3000;
+	if (vPos.y < 0)
+		vPos.y = 0;
+	if (vPos.y > 3000)
+		vPos.y = 3000;
+
 
 	SetPos(vPos);
 

@@ -90,6 +90,24 @@ void CSmallMonster::render(HDC _dc)
 		, 0, 0
 		, SRCCOPY);*/
 
+
+	// 몬스터 HP 표시 구간.
+	for (int i = 1; i <= m_HP; ++i)
+	{
+		HBRUSH hHPBrush = (HBRUSH)CreateSolidBrush(RGB(255, 0, 0));
+		HBRUSH hOrigin_HPBrush = (HBRUSH)SelectObject(_dc, hHPBrush);
+
+		Rectangle(_dc, (int)(vPos.x - vSize.x / 3.f + 8.f * (float)i)
+			, (int)(vPos.y - vSize.y)
+			, (int)((vPos.x - vSize.x / 3.f + 8.f * (float)i + 5.f))
+			, (int)(vPos.y - vSize.y + 5.f));
+
+		SelectObject(_dc, hOrigin_HPBrush);
+		DeleteObject(hHPBrush);
+	}
+
+	
+
 	CObj::render(_dc);
 }
 
