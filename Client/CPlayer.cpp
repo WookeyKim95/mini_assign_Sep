@@ -25,8 +25,8 @@ CPlayer::CPlayer()
 	m_pTexture(nullptr)
 {
 	CreateCollider();
-	GetCollider()->SetOffsetPos(Vec2(0.f, 0.f));
-	GetCollider()->SetScale(Vec2(80.f, 80.f));
+	GetCollider()->SetOffsetPos(Vec2(0.f, 20.f));
+	GetCollider()->SetScale(Vec2(30.f, 50.f));
 
 	// 이미지 로딩 (상하좌우)
 	m_pTexture = CResMgr::GetInst()->LoadTexture(L"PlayerImg_U", L"texture\\Fighter.bmp");
@@ -48,6 +48,8 @@ void CPlayer::tick()
 	if (IsPressed(KEY::LEFT))
 	{
 		// 바라보는 방향 왼쪽으로 저장 및 이동
+		GetCollider()->SetOffsetPos(Vec2(20.f, 0.f));
+		GetCollider()->SetScale(Vec2(50.f, 30.f));
 		CurDir = PLAYER_DIR::PD_LEFT;
 		vPos.x -= m_fSpeed * DT;
 	}
@@ -55,6 +57,8 @@ void CPlayer::tick()
 	if (IsPressed(KEY::RIGHT))
 	{
 		// 바라보는 방향 오른쪽으로 저장 및 이동
+		GetCollider()->SetOffsetPos(Vec2(-20.f, 0.f));
+		GetCollider()->SetScale(Vec2(50.f, 30.f));
 		CurDir = PLAYER_DIR::PD_RIGHT;
 		vPos.x += m_fSpeed * DT;
 	}
@@ -62,6 +66,8 @@ void CPlayer::tick()
 	if (IsPressed(KEY::UP))
 	{
 		// 바라보는 방향 위로 저장 및 이동
+		GetCollider()->SetOffsetPos(Vec2(0.f, 20.f));
+		GetCollider()->SetScale(Vec2(30.f, 50.f));
 		CurDir = PLAYER_DIR::PD_UP;
 		vPos.y -= m_fSpeed * DT;
 	}
@@ -69,6 +75,8 @@ void CPlayer::tick()
 	if (IsPressed(KEY::DOWN))
 	{
 		// 바라보는 방향 아래로 저장 및 이동
+		GetCollider()->SetOffsetPos(Vec2(0.f, -20.f));
+		GetCollider()->SetScale(Vec2(30.f, 50.f));
 		CurDir = PLAYER_DIR::PD_DOWN;
 		vPos.y += m_fSpeed * DT;
 	}
@@ -155,7 +163,7 @@ void CPlayer::tick()
 		pCurLevel->AddObject(pHP_Potion, LAYER::ITEM);
 	}*/
 	
-	// 위치 밖으로 벗어나지 않도록 하는 장치.
+	// 일정 위치 밖으로 벗어나지 않도록 하는 장치.
 	if (vPos.x < 0)
 		vPos.x = 0;
 	if (vPos.x > 3000)
@@ -176,10 +184,24 @@ void CPlayer::tick()
 
 void CPlayer::render(HDC _dc)
 {
-	
 
 	Vec2 vPos = CCamera::GetInst()->GetRenderPos(GetPos());;
 	Vec2 vSize = GetScale();
+
+
+	//카메라 액션
+	// 남은과제 : 충돌체도 이미지 따라가도록 해야..
+	/*if (GetPos().x < 800)
+		vPos.x -= 800 - GetPos().x;
+		
+	if (GetPos().x > 2200)
+		vPos.x += GetPos().x - 2200;
+
+	if (GetPos().y < 450)
+		vPos.y -= 450 - GetPos().y;
+
+	if (GetPos().y > 2200)
+		vPos.y += GetPos().y - 2200;*/
 
 	// 플레이어를 그리는 부분
 	
@@ -255,7 +277,6 @@ void CPlayer::BeginOverlap(CCollider* _pOther)
 		++m_HP;
 		_pOther->GetOwner()->SetDead();
 	}
-	// 포션이 같은 자리에서 2개 생성되었음. 왜지
 
 	if (_pOther->GetOwner()->returnLayer() == LAYER::MONSTER || _pOther->GetOwner()->returnLayer() == LAYER::MONSTER_PROJECTILE)
 		--m_HP; // 몬스터나 몬스터의 미사일이랑 충돌시에는 정상적으로 1회 충돌 판정.

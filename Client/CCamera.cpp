@@ -5,8 +5,6 @@
 #include "CKeyMgr.h"
 #include "CTimeMgr.h"
 
-#include "CPlayer.h"
-
 CCamera::CCamera()
 {
 
@@ -19,16 +17,29 @@ CCamera::~CCamera()
 
 void CCamera::tick()
 {
-	// 어떻게 해야 플레이어의 위치를 따라갈까나
-	// 사실 간단한 방법은 플레이어랑 같이 움직이는건데.. 무빙속도 똑같이 해서.
-	if (IsPressed(KEY::UP) && m_vLook.y >= 0)
+	// 플레이어를 따라 움직이는 카메라
+	if (IsPressed(KEY::UP) && m_vAround.y <= 0)
 		m_vLook.y -= 200.f * DT;
-	if (IsPressed(KEY::DOWN) && m_vLook.y <= 3000)
+	if (IsPressed(KEY::DOWN) && m_vAround.y <= 0)
 		m_vLook.y += 200.f * DT;
-	if (IsPressed(KEY::LEFT) && m_vLook.x >= 0)
+	if (IsPressed(KEY::LEFT) && m_vAround.x <= 0)
 		m_vLook.x -= 200.f * DT;
-	if (IsPressed(KEY::RIGHT) && m_vLook.x <= 3000)
+	if (IsPressed(KEY::RIGHT) && m_vAround.x <= 0)
 		m_vLook.x += 200.f * DT;
+
+
+	// 가장자리에 있을 땐 카메라 이동 멈추기 위한 수단
+	if ((IsPressed(KEY::UP) && m_vLook.y <= 450) || (IsPressed(KEY::DOWN) && m_vLook.y >= 2550))
+		m_vAround.y += 200.f * DT;
+
+	if ((IsPressed(KEY::DOWN) && m_vLook.y <= 450) || (IsPressed(KEY::UP) && m_vLook.y >= 2550))
+		m_vAround.y -= 200.f * DT;
+
+	if ((IsPressed(KEY::LEFT) && m_vLook.x <= 800) || (IsPressed(KEY::RIGHT) && m_vLook.x >= 2200))
+		m_vAround.x += 200.f * DT;
+
+	if ((IsPressed(KEY::RIGHT) && m_vLook.x <= 800) || (IsPressed(KEY::LEFT) && m_vLook.x >= 2200))
+		m_vAround.x -= 200.f * DT;
 
 
 	// WSAD 키에 따른 카메라 이동
