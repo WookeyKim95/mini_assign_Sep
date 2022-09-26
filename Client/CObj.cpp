@@ -22,6 +22,42 @@ CObj::~CObj()
 	DEL(m_pAnimator);
 }
 
+void CObj::renderMap(HDC _dc)
+{
+	Vec2 realPos = GetPos();
+
+	Vec2 mapPos = { realPos.x / 20.f + 1350, realPos.y / 20.f + 50 };
+
+	if (returnLayer() == LAYER::PLAYER)
+	{
+		HBRUSH hBrush = (HBRUSH)CreateSolidBrush(RGB(255, 255, 0));
+		HBRUSH hOrigin_Brush = (HBRUSH)SelectObject(_dc, hBrush);
+
+		Rectangle(_dc, (int)( mapPos.x - 5.f)
+		, (int)(mapPos.y - 5.f)
+		, (int)(mapPos.x + 5.f)
+		, (int)(mapPos.y + 5.f));
+
+		SelectObject(_dc, hOrigin_Brush);
+		DeleteObject(hBrush);
+	}
+
+	if (returnLayer() == LAYER::MONSTER)
+	{
+		HBRUSH hBrush = (HBRUSH)CreateSolidBrush(RGB(0, 255, 255));
+		HBRUSH hOrigin_Brush = (HBRUSH)SelectObject(_dc, hBrush);
+
+		Rectangle(_dc, (int)(mapPos.x - 5.f)
+			, (int)(mapPos.y - 5.f)
+			, (int)(mapPos.x + 5.f)
+			, (int)(mapPos.y + 5.f));
+
+		SelectObject(_dc, hOrigin_Brush);
+		DeleteObject(hBrush);
+	}
+
+}
+
 void CObj::tick()
 {
 
@@ -34,7 +70,6 @@ void CObj::tick()
 
 void CObj::render(HDC _dc)
 {
-
 	if (m_pCollider != nullptr)
 		m_pCollider->render(_dc);
 

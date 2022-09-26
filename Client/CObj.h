@@ -29,7 +29,7 @@ public:
 
     CCollider* GetCollider() { return m_pCollider; }
     
-
+    void renderMap(HDC _dc);
 
 public:
     virtual void tick();

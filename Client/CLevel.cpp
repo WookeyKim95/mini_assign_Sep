@@ -31,6 +31,19 @@ void CLevel::tick()
 
 void CLevel::render(HDC _dc)
 {
+	// ¹Ì´Ï¸Ê
+
+	HBRUSH hBh = (HBRUSH)CreateSolidBrush(RGB(255, 255, 255));
+	HBRUSH hOrigin_Brush = (HBRUSH)SelectObject(_dc, hBh);
+
+	Rectangle(_dc, (int)(1350)
+		, (int)(50)
+		, (int)(1500)
+		, (int)(200));
+
+	SelectObject(_dc, hOrigin_Brush);
+	DeleteObject(hBh);
+
 	for (UINT i = 0; i < (UINT)LAYER::END; ++i)
 	{
 		vector<CObj*>::iterator iter = m_arrLayer[i].begin();
@@ -44,6 +57,7 @@ void CLevel::render(HDC _dc)
 			else
 			{
 				(*iter)->render(_dc);
+				(*iter)->renderMap(_dc);
 				++iter;
 			}
 		}

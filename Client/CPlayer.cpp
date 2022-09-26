@@ -263,8 +263,8 @@ void CPlayer::render(HDC _dc)
 			, (int)(vPos_BOOM.y + vSize_BOOM.y / 2.f));
 
 	}
-	SelectObject(_dc, hOrigin_HPBrush);
-	DeleteObject(hHPBrush);
+	SelectObject(_dc, hOrigin_BOOMBrush);
+	DeleteObject(hBOOMBrush);
 
 	CObj::render(_dc);
 }

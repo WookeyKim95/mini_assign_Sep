@@ -21,12 +21,13 @@ CStartLevel::~CStartLevel()
 
 void CStartLevel::init()
 {
+	
 	// Player 생성
 	CObj* pObj = new CPlayer;
 	pObj->SetPos(Vec2(800.f, 450.f));
 	pObj->SetScale(Vec2(100.f, 100.f));
 	AddObject(pObj, LAYER::PLAYER);
-
+	
 
 	// 랜덤위치에 큰 Monster 5마리 생성
 	for (int i = 0; i < 5; ++i)
