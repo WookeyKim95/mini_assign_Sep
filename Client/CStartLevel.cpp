@@ -32,7 +32,7 @@ void CStartLevel::init()
 	for (int i = 0; i < 5; ++i)
 	{
 		CMonster* pMonster = new CMonster;
-		pMonster->SetPos(Vec2((float)(rand() % 2500), float(rand() % 2500)));
+		pMonster->SetPos(Vec2((float)(rand() % 3000), float(rand() % 3000)));
 		pMonster->SetScale(Vec2(150.f, 150.f));
 
 		// 플레이어에게 유도탄을 쏘기 위한 타겟 장치
@@ -47,7 +47,7 @@ void CStartLevel::init()
 	for (int i = 0; i < 10; ++i)
 	{
 		CSmallMonster* pSmallMonster = new CSmallMonster;
-		pSmallMonster->SetPos(Vec2((float)(rand() % 2500), float(rand() % 2500)));
+		pSmallMonster->SetPos(Vec2((float)(rand() % 3000), float(rand() % 3000)));
 		pSmallMonster->SetScale(Vec2(50.f, 50.f));
 
 	 // 작은 몬스터는 플레이어를 쫓아오도록 설정하는 것.

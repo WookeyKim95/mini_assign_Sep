@@ -1,22 +1,39 @@
-﻿  CCamera.cpp
+﻿  pch.cpp
+  CAnimator.cpp
+  CCamera.cpp
   CCollider.cpp
   CCollisionMgr.cpp
+  CComponent.cpp
   CEngine.cpp
+  CEntity.cpp
   CEventMgr.cpp
   CGMissile.cpp
 C:\Users\user\Desktop\assort_rock\assign_0921\Client\CGMissile.cpp(35,19): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\user\Desktop\assort_rock\assign_0921\Client\CGMissile.cpp(47,21): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   CHP_Potion.cpp
+  CKeyMgr.cpp
   CLevel.cpp
-  CMMissile.cpp
-C:\Users\user\Desktop\assort_rock\assign_0921\Client\CMMissile.cpp(33,21): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CLevelMgr.cpp
   CMissile.cpp
 C:\Users\user\Desktop\assort_rock\assign_0921\Client\CMissile.cpp(36,21): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CMMissile.cpp
+C:\Users\user\Desktop\assort_rock\assign_0921\Client\CMMissile.cpp(33,21): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   CMonster.cpp
   CObj.cpp
+  CPathMgr.cpp
+C:\Users\user\Desktop\assort_rock\assign_0921\Client\CPathMgr.cpp(20,36): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   CPlayer.cpp
+  CRes.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  CResMgr.cpp
   CSmallMonster.cpp
+  CSound.cpp
+  CStage01Level.cpp
   CStartLevel.cpp
+  CTexture.cpp
+  CTimeMgr.cpp
   func.cpp
-  pch.cpp
+  main.cpp
+  코드를 생성하고 있습니다...
   Client.vcxproj -> C:\Users\user\Desktop\assort_rock\assign_0921\OutputFile\bin_d\Client.exe

@@ -1,41 +1,41 @@
-﻿  CCamera.cpp
+﻿  pch.cpp
+  CAnimator.cpp
+  CCamera.cpp
   CCollider.cpp
   CCollisionMgr.cpp
+  CComponent.cpp
   CEngine.cpp
+  CEntity.cpp
   CEventMgr.cpp
   CGMissile.cpp
 C:\Users\user\Desktop\assort_rock\assign_0921\Client\CGMissile.cpp(35,19): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\user\Desktop\assort_rock\assign_0921\Client\CGMissile.cpp(47,21): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   CHP_Potion.cpp
+  CKeyMgr.cpp
   CLevel.cpp
-  CMMissile.cpp
-C:\Users\user\Desktop\assort_rock\assign_0921\Client\CMMissile.cpp(33,21): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CLevelMgr.cpp
   CMissile.cpp
 C:\Users\user\Desktop\assort_rock\assign_0921\Client\CMissile.cpp(36,21): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CMMissile.cpp
+C:\Users\user\Desktop\assort_rock\assign_0921\Client\CMMissile.cpp(33,21): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   CMonster.cpp
   CObj.cpp
+  CPathMgr.cpp
+C:\Users\user\Desktop\assort_rock\assign_0921\Client\CPathMgr.cpp(20,36): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   CPlayer.cpp
+  CRes.cpp
+  컴파일하고 있습니다...
+  CResMgr.cpp
   CSmallMonster.cpp
+  CSound.cpp
+  CStage01Level.cpp
   CStartLevel.cpp
+  CTexture.cpp
+  CTimeMgr.cpp
   func.cpp
-  pch.cpp
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\ccollider.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\ccamera.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cengine.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\ccollisionmgr.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\centity.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\ccomponent.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\ceventmgr.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\ccollisionmgr.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\chp_potion.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cgmissile.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\clevel.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cgmissile.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cmmissile.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cmissile.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cmonster.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cmissile.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cplayer.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cobj.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cresmgr.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cres.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cstage01level.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\csound.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\cstartlevel.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\csmallmonster.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\ctimemgr.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\ctexture.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\client.pch PCH가 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\func.obj 및 c:\users\user\desktop\assort_rock\assign_0921\client\x64\release\csmallmonster.obj에 있습니다.  첫 번째 PCH를 사용합니다.
+  main.cpp
   코드를 생성하고 있습니다.
-  2 of 677 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    9 functions had inline decision re-evaluated but remain unchanged
+  Compiler switch has changed, fall back to full compilation.
+  All 677 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   코드를 생성했습니다.
   Client.vcxproj -> C:\Users\user\Desktop\assort_rock\assign_0921\OutputFile\bin\Client.exe
